@@ -193,6 +193,7 @@ pip3 install -r /var/www/html/project/requirements.txt
 
 ### Update Google application domain
 on: https://console.developers.google.com
+
 to: http://ec2-35-169-56-175.compute-1.amazonaws.com/login/authorized
 
 #### Set up database and get application configured
@@ -207,5 +208,7 @@ python3 /var/www/html/project/run.py
 
 ## References
 [How To Create a Sudo User on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart)
+
 [How do I add new user accounts with SSH access to my Amazon EC2 Linux instance?](https://aws.amazon.com/premiumsupport/knowledge-center/new-user-accounts-linux-instance/)
+
 [How can I close a terminal without killing the command running in it?](https://unix.stackexchange.com/a/4006)
