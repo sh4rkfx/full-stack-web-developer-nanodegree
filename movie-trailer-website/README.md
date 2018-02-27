@@ -14,10 +14,9 @@ Make sure you have Python installed
 
 To run the program do the following:
 
-1. Fork the project from https://github.com/sh4rkfx/udacity-fsnd/tree/master/1/project_1
-2. Clone it into your local repository
-3. Open a console/terminal
-4. Run the command:
+1. Download or clone the project into your local repository
+2. Open a console/terminal
+3. Run the command:
 ```
 python entertainment_center.py
 ```
