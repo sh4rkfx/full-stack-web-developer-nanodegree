@@ -25,4 +25,4 @@ This repository contains project work for Udacity's [Full Stack Web Developer Na
 - Linux Command Line Basics
 
 ## Certificate
-[embed]http://github.com/sh4rkfx/full-stack-web-developer-nanodegree/blob/master/certificate.pdf[/embed]
+http://github.com/sh4rkfx/full-stack-web-developer-nanodegree/blob/master/certificate.pdf
