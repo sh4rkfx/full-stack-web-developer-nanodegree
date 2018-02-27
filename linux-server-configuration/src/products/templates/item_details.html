@@ -1,0 +1,53 @@
+{% extends "_l_center.html" %}
+{% from "_form_macros.html" import render_field %}
+{% block title %}Change this title{% endblock %}
+
+{% block main_col %}
+    <div class="container-fluid">
+        <div class="row" >
+        <h2>Edit Item Details</h2>
+        </div>
+        <div class="row" >
+            <form id="item_form"
+                  name = "item_form"
+                  {% if actionstate == 'createmode' %}
+                      action="{{ url_for('products.new_items_details') }}"
+                  {% elif actionstate == 'editmode' %}
+                      action ="{{url_for('products.item_details_action',
+                              item_slug = item_slug,
+                              action_page = 'edit') }}"
+                  {% endif %}
+
+                  method="POST">
+                  <dl>
+                      {{ form.item_slug}}
+                      {{ form.csrf_token }}
+                      <div class="row" >
+                          {{form.item_name.label}} <br />
+                          {{ render_field(form.item_name) }} <br />
+                      </div>
+                      <div class="row" >
+                          {{form.item_description.label}} <br />
+                          {{ render_field(form.item_description) }} <br /> <br />
+                      </div>
+                      <div class="row" >
+                          {{form.category.label}} <br />
+                          {{ render_field(form.category) }} <br /> <br />
+                      </div>
+                      <div class="row" >
+                          <div class="col-md-2">
+                                  {{ form.upload_submit}}
+                          </div>
+                          <div class="col-md-6 pull-left">
+                              <a class="btn btn-default"  href={{ url_for('products.index') }}>Cancel</a>
+                          </div>
+                      </div>
+                  </dl>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+{% block page_specific_scripts %}
+    <script src="{{url_for('static', filename='custom/js/items.js') }}"></script>
+{% endblock %}

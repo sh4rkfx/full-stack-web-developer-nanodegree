@@ -1,0 +1,112 @@
+html,
+body,
+.container1 {
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+
+}
+
+header{
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+#list {
+  background-color: #fff;
+  /*border: solid #000;*/
+  display: block;
+  height: 100%;
+/*  opacity: .9;*/
+  overflow: scroll;
+  position: absolute;
+  z-index: 99;
+  padding-right: 0px !important;
+}
+
+header {
+  color: #000;
+  font-family: Impact;
+  font-size: 2em;
+  margin: 16px;
+  margin-top: 0px;
+  padding: 1%;
+}
+
+ul {
+  color: #000;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  /*margin-left: 16px;*/
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+li:first-child {
+  border-top: 1px solid black;
+}
+#arrow {
+  color: #fff;
+  height: 40px;
+  width: 40px;
+  left: 20px;
+  position: relative;
+}
+
+ul li p {
+  cursor: pointer;
+  color: #000;
+  font-size: 1.0em;
+  margin-bottom: 0px;
+}
+
+ul li:hover {
+  background-color: #f1f1f1;
+  color: #fff;
+}
+
+#cafe-address {
+  color: #fff;
+  font-size: 1em;
+  margin-top: 0px;
+}
+
+#map {
+  height: 100%;
+  margin: 0;
+}
+
+#foursquare-info {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#foursquare-info h5 {
+  color: #000;
+  margin-bottom: 5px;
+}
+
+
+#foursquare-info img {
+  margin: 0 auto;
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  #list {
+    height: 33%;
+    width: 50%;
+  }
+
+}

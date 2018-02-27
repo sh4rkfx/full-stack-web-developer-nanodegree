@@ -1,0 +1,38 @@
+{% extends "__l_left_sidebar.html" %}
+
+{% block title %}Item Listing{% endblock %}
+{% block side_col %}
+    <div class="container-fluid">
+        <div class="row" >
+            <p> <h4>Categories</h4></p> <hr />
+
+            <ul style="list-style-type:none">
+            <strong><a href={{ url_for('products.category_details') }}>Add New Category</a></strong>
+              </br></br>
+              {% for c in category_list %}
+                  <li><a href={{url_for('products.index',
+                                category_slug = c.category_slug) }}>
+                                {{c.category_name}}</a></li>
+              {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block main_col %}
+    <div class="container-fluid">
+        <div class="row" >
+            <p> <h4>Items Listing</h4></p><hr />
+
+            <ul style="list-style-type:none">
+            <strong><a href={{ url_for('products.new_items_details') }}>Add New Item</a></strong>
+              </br></br>
+              {% for i in item_list %}
+                  <li><a href={{url_for('products.item_details_view',
+                                        item_slug = i.item_slug) }}>
+                                {{i.item_name}} <i>({{i.category}})</i> </a></li>
+              {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

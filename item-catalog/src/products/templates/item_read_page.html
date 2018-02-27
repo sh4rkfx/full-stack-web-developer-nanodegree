@@ -1,0 +1,39 @@
+{% extends "_l_center.html" %}
+{% from "_form_macros.html" import render_field %}
+{% block title %}Change this title{% endblock %}
+
+{% block main_col %}
+    <div class="container-fluid">
+        <div class="row" >
+            <h2>{{my_item.item_name}}</h2>
+                <h4>{{my_item.category}}</h4>
+                <hr>
+                <p> {{my_item.item_description}} </p>
+                <hr>
+                {% if my_item.created_by == current_user.id %}
+                    <div class="col-md-2">
+                        <a class="btn btn-primary" href={{url_for('products.item_details_action',
+                                item_slug = my_item.item_slug,
+                                action_page = 'edit') }}>Edit Item</a>
+                    </div>
+                    <div class="col-md-2">
+                        <a class="btn btn-danger" href={{url_for('products.item_details_action',
+                                item_slug = my_item.item_slug,
+                                action_page = 'delete') }}>Delete Item</a>
+                    </div>
+                {% endif %}
+
+                <div class="col-md-3">
+                     <a class="btn btn-default" href={{ url_for('products.index') }}>Return To Listing</a>
+                </div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}
+{% block page_specific_scripts %}
+    <script src="{{url_for('static', filename='custom/js/items.js') }}"></script>
+{% endblock %}

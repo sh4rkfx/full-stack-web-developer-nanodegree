@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Products Catalog - {% block title %}{% endblock %} </title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='custom/css/base.css') }}">
+    {% block content_scripts %} {% endblock %}
+  </head>
+  <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Catalog Listing</a>
+                </div>
+
+                {% if current_user.is_authenticated  %}
+                    <p class="navbar-text pull-right" > Welcome, {{current_user.user_name}}</p>
+                {% else %}
+                    <a href="{{ url_for('auth.login') }}"
+                       class="btn btn-danger navbar-btn pull-right"><span style="color:orange;"
+                            class="glyphicon glyphicon-log-in"></span>Login Using Google</a>
+                {% endif %}
+
+
+
+            </div>
+        </nav>
+
+<div class="container-fluid">
+    <div class="col-md-12">
+
+         <!-- flash messages -->
+        {% for error_message in get_flashed_messages(category_filter=["error"]) %}
+            <div class="alert alert-danger alert-dismissible">{{ error_message }}</div>
+        {% endfor %}
+
+        {% for success_message in get_flashed_messages(category_filter=["success"]) %}
+            <div class="alert alert-success alert-dismissible">{{ success_message }}</div>
+        {% endfor %}
+
+        {% for info_message in get_flashed_messages(category_filter=["info"]) %}
+            <div class="alert alert-info alert-dismissible">{{ info_message }}</div>
+        {% endfor %}
+
+        {% for info_message in get_flashed_messages(category_filter=["warning"]) %}
+            <div class="alert alert-warning alert-dismissible">{{ info_message }}</div>
+        {% endfor %}
+        <!--end of flash messages-->
+
+        <!-- child templates -->
+        {% block content %}{% endblock %}
+        <!--end of child templates -->
+    </div>
+
+
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+    {% block page_content_scripts %}{% endblock %}
+  </body>
+</html>

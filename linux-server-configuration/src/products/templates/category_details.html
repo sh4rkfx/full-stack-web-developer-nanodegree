@@ -1,0 +1,61 @@
+{% extends "_l_center.html" %}
+{% from "_form_macros.html" import render_field %}
+{% block title %}Change this title{% endblock %}
+
+{% block main_col %}
+    <div class="container-fluid">
+        <div class="row" >
+        <h2>Edit Category Details</h2>
+        </div>
+        <div class="row" >
+            <form id="category_form"
+                  name = "category_form"
+                  {% if actionstate == 'createmode' %}
+                      action="{{ url_for('products.category_details') }}"
+                  {% elif actionstate == 'editmode' %}
+                      action ="{{url_for('products.category_details_action',
+                              category_slug = category_slug,
+                              action_page = 'edit') }}"
+                  {% endif %}
+
+                  method="POST">
+                  <dl>
+                      {{ form.category_slug}}
+                      {{ form.csrf_token }}
+                      <div class="row" >
+                          {{form.category_name.label}} <br />
+                          {{ render_field(form.category_name) }} <br />
+                      </div>
+                      <div class="row" >
+                          {{form.category_description.label}} <br />
+                          {{ render_field(form.category_description) }} <br /> <br />
+                      </div>
+                      <div class="row" >
+                          <div class="col-md-2">
+                              {% if actionstate == 'editmode' %}
+                                  {{ form.upload_submit}}
+                              {% elif actionstate == 'readmode' %}
+                                  <a href={{url_for('products.category_details_action',
+                                          category_slug = category_slug,
+                                          action_page = 'edit') }}>Edit Category</a>
+                                  <a href={{url_for('products.category_details_action',
+                                          category_slug = category_slug,
+                                          action_page = 'delete') }}>Delete Category</a>
+                              {% elif actionstate == 'createmode' %}
+                                  {{ form.upload_submit}}
+                              {% endif %}
+                          </div>
+                          <div class="col-md-6 pull-left">
+                              <a class="btn btn-default" href={{ url_for('products.index') }}>Cancel</a>
+                          </div>
+
+                      </div>
+                  </dl>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+{% block page_specific_scripts %}
+    <script src="{{url_for('static', filename='custom/js/categories.js') }}"></script>
+{% endblock %}
