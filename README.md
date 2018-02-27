@@ -4,12 +4,12 @@
 This repository contains project work for Udacity's [Full Stack Web Developer Nanodegree](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004).
 
 ## Projects
-- **Project 1** - [Movie Trailer Website](https://github.com/sh4rkfx/full-stack-web-developer/movie-trailer-website)
-- **Project 2** - [Build a Portfolio Site](https://github.com/sh4rkfx/full-stack-web-developer/build-a-portfolio-site)
-- **Project 3** - [Logs Analysis](https://github.com/sh4rkfx/full-stack-web-developer/logs-analysis)
-- **Project 4** - [Item Catalog](https://github.com/sh4rkfx/full-stack-web-developer/item-catalog)
-- **Project 5** - [Neighborhood Map](https://github.com/sh4rkfx/full-stack-web-developer/neighborhood-map)
-- **Project 6** - [Linux Server Configuration](https://github.com/sh4rkfx/full-stack-web-developer/linux-server-configuration)
+- **Project 1** - [Movie Trailer Website](https://github.com/sh4rkfx/full-stack-web-developer-nanodegree/movie-trailer-website)
+- **Project 2** - [Build a Portfolio Site](https://github.com/sh4rkfx/full-stack-web-developer-nanodegree/build-a-portfolio-site)
+- **Project 3** - [Logs Analysis](https://github.com/sh4rkfx/full-stack-web-developer-nanodegree/logs-analysis)
+- **Project 4** - [Item Catalog](https://github.com/sh4rkfx/full-stack-web-developer-nanodegree/item-catalog)
+- **Project 5** - [Neighborhood Map](https://github.com/sh4rkfx/full-stack-web-developer-nanodegree/neighborhood-map)
+- **Project 6** - [Linux Server Configuration](https://github.com/sh4rkfx/full-stack-web-developer-nanodegree/linux-server-configuration)
 
 ## Courses
 - Programming Foundations with Python
